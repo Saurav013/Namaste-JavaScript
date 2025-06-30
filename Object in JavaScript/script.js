@@ -8,3 +8,10 @@ let Obj = {
 };
 
 console.log(Obj);
+
+const InstaId = {
+  UserId : "Usera@1234",
+  Password : "Mahadev@12"
+}
+
+console.log(InstaId);
