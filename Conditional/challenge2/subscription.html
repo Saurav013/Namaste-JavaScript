@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Subscription Checker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1c1c1c;
+        color: white;
+        padding: 40px;
+      }
+
+      h2 {
+        color: #00ffe5;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: 250px;
+        border-radius: 5px;
+        border: none;
+        margin-right: 10px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px 15px;
+        background-color: #00ff88;
+        color: black;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .output {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #333;
+        border: 1px solid #555;
+        border-radius: 5px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <h2>Check Your Subscription Access</h2>
+
+      <input
+        type="text"
+        id="subscriptionInput"
+        placeholder="Enter 'premium' or 'standard'"
+      />
+      <button id="checkButton">Check</button>
+
+      <div class="output" id="result"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("checkButton")
+        .addEventListener("click", function () {
+          const input = document
+            .getElementById("subscriptionInput")
+            .value.trim()
+            .toLowerCase();
+          const resultDiv = document.getElementById("result");
+
+          if (input === "premium") {
+            resultDiv.textContent = "✅ Access to all content.";
+          } else if (input === "standard") {
+            resultDiv.textContent = "✅ Access to limited content.";
+          } else if (input === "") {
+            resultDiv.textContent = "⚠️ Please enter a subscription type.";
+          } else {
+            resultDiv.textContent = "❌ Please subscribe to access content.";
+          }
+        });
+    </script>
+  </body>
+</html>
